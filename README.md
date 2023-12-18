@@ -12,6 +12,18 @@ The Stores table was loaded from Azure Blob Storage and columns were renamed to 
 
 The Customers table was loaded with the Folder data connector, the three files were combined and transformed in a single query and loaded into a single table. A Full Name column was created by combining First Name and Last Name columns.
 
+### Part 2, creating a data model
+A continous date table was created to cover the time period of the data. Additional columns were added with DAX formulas including: day of week, month number, month name, quarter etc.
+
+A star schema was created by creating relationships from the Orders table to the other tables in the model. All relationships from the Orders table outwards to the other tables are many-to-one, with a single filter direction from the Order table (many) to the other tables (one).
+
+A separate measures table was created for ease of navigation and good data management. Useful measures were added including: Total Orders, Total Revenue, Total Profit, Total Customers, Total Quantity, and Profit and Revenue YTD (Year To Date).
+
+A date hierarchy was created in the Dates table to enable drilling down and granular analysis.
+
+A geography hierarchy was created in the Stores table to enable filtering by region, country, and province/state. Geographical data was assigned the correct data category (Continent/Country/State or Province) to facilitate analysis. 
+
+
 ## Installation instructions
 
 ## Usage instructions
