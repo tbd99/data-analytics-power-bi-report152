@@ -38,9 +38,22 @@ A set of three card visuals were created to show the top customer by revenue, di
 
 Finally, a date slicer was added to enable users to fitler the report page by year.
 
+### Part 4, building the Executive Summary report page (milestone 6)
+Headline card visuals were created to show the Total Revenue, Total Orders and Total Profit, these were created using measures previously constructed using DAX formulae.
 
+A line chart was created to show Total Revenue over time. The date hierarchy created in milestone 3 was used to define the Y axis, enabling users to drill down from the year level to the month level. A trend line was added, as well as a forecast line over the next 10 periods with a 95% confidence interval.
 
+A donut chart was created to show the total revenue per store country, the 'Country' column in the Stores table was used to filter the Total Revenue measure to create this chart.
 
+A donut chart was created to show the total revenue per store type, the 'Store Type' column in the Stores table was used to filter the Total Revenue measure to create this chart.
+
+A clustered bar chart was created showing the number of orders per each product category, the 'Category' column in the Products table was used to filter the Total Orders measure to create this chart.
+
+A table was created to display the top 10 products based on revenue. The table shows the Product Description, Category, Total Orders, Total Customers and the Total Revenue generated for each product. TopN filtering was used to filter for the top 10 customers by revenue. Conditional formatting was applied to add data bars to the Total Revenue column.
+
+A set of three KPI visuals were created to show Quarterly Revenue, Quarterly Profit, Quarterly Orders and the associated quarterly targets for each of these measures. DAX formulae were used to generate measures to create these card visuals. 
+
+Finally, a date slicer was added to enable users to fitler the report page by year.
 
 ## Installation instructions
 
