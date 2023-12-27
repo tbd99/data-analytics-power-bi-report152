@@ -55,6 +55,16 @@ A set of three KPI visuals were created to show Quarterly Revenue, Quarterly Pro
 
 Finally, a date slicer was added to enable users to fitler the report page by year.
 
+## Part 5, building the Product Detail report page (milestone 7)
+Gauge visuals were created to show the current performance of Orders, Revenue and Profit against quarterly targets, these were created using measures constructed using DAX formulae. Maximum gauge value was set to the quarterly target for each measure, and conditional formatting was applied so the callout value would show red if the target it not met, and black if it is. 
+
+An area chart was created to show the performance of different product categories over time. Total Revenue was plotted against Dates[Start of Quarter] with Products[Category] as the legend.
+
+The top 10 products table was copied from the Executive summary page and formatted. 
+
+A scatter graph was created to show the quantity of sales for each product category against profit per item. A calculated column was used to plot Profit per Item. Products[Total Quantity] was plotted against Products[Profit per Item] with Products[Description] as values and Products[Category] as the legend. 
+
+A slicer filter toolbar was created to allow users to control how the data on the page are filtered. Two new vertical list slicers were created to enable the user to filter by Product Category from Products[Category] and Country from Stores[Country]. A slicer toolbar was created with these slicers and a back button, linked to a bookmark with the toolbar hidden to allow users to click back to the main report page. A filter button was created on the main report page, linked to a bookmark with the toolbar open to allows users to navigate to the slicer toolbar from the main report page. 
 ## Installation instructions
 
 ## Usage instructions
