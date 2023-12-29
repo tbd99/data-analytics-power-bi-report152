@@ -65,6 +65,14 @@ The top 10 products table was copied from the Executive summary page and formatt
 A scatter graph was created to show the quantity of sales for each product category against profit per item. A calculated column was used to plot Profit per Item. Products[Total Quantity] was plotted against Products[Profit per Item] with Products[Description] as values and Products[Category] as the legend. 
 
 A slicer filter toolbar was created to allow users to control how the data on the page are filtered. Two new vertical list slicers were created to enable the user to filter by Product Category from Products[Category] and Country from Stores[Country]. A slicer toolbar was created with these slicers and a back button, linked to a bookmark with the toolbar hidden to allow users to click back to the main report page. A filter button was created on the main report page, linked to a bookmark with the toolbar open to allows users to navigate to the slicer toolbar from the main report page. 
+
+# Part 6, building the Stores Map page (milestone 8)
+A map visual was created using the previously created geographical hierarchy with the Profit YTD measure as values. A tile style slicer was added with Stores[Country] as the field to allow users to filter by country or show all countries. 
+
+A drillthrough page was created to allow users to quickly see an overview of a store's performance. A table was created to show the top 5 products based on total revenue, with columns: Description, Profit YTD, Total Orders, Total Revenue. A column chart showing the Total Orders by product category for the store was created. Gauges were created for Profit YTD against a profit target of 20% year-on-year growth vs. the same period in the previous year. An equivalent gauge was created for Revenue YTD. Measures were calculcated to derive profit and revenue targets. A card visual was created to show the currently selected store. 
+
+A tooltip page was created to enable users to quickly see each stores Profit YTD performance against the profit target by hovering over a store on the map. The profit gauge visual created in the previous step was copied to the tooltip page. 
+
 ## Installation instructions
 
 ## Usage instructions
