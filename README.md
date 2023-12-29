@@ -90,10 +90,10 @@ No specific installation instructions
 
 ## Usage instructions
 The report is split into 4 main sections:
-Executive Summary page - provides a high level overview of the data across all categories
-Customer Detail page - provides a more detailed view of the number of customers and the distribution of customers according to country and product category, as well as the top spending customers
-Product Detail page - provides a more detailed view of the performance and profitability of different products according to cateogry and country
-Stores Map page - a map visual displaying the YTD Profit for different regions
+- Executive Summary page: provides a high level overview of the data across all categories
+- Customer Detail page: provides a more detailed view of the number of customers and the distribution of customers according to country and product category, as well as the top spending customers
+- Product Detail page: provides a more detailed view of the performance and profitability of different products according to cateogry and country
+- Stores Map page: a map visual displaying the YTD Profit for different regions
 
 Use the navigation bar on the left hand side of each report page to navigate between pages.
 Visuals on each report page can be interacted with to reveal data for specific selections. 
