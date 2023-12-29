@@ -66,6 +66,8 @@ A scatter graph was created to show the quantity of sales for each product categ
 
 A slicer filter toolbar was created to allow users to control how the data on the page are filtered. Two new vertical list slicers were created to enable the user to filter by Product Category from Products[Category] and Country from Stores[Country]. A slicer toolbar was created with these slicers and a back button, linked to a bookmark with the toolbar hidden to allow users to click back to the main report page. A filter button was created on the main report page, linked to a bookmark with the toolbar open to allows users to navigate to the slicer toolbar from the main report page. 
 
+Measures were created to show the selected value for each slicer. These measures were used to create card visuals to display the categories selected to the user. 
+
 # Part 6, building the Stores Map page (milestone 8)
 A map visual was created using the previously created geographical hierarchy with the Profit YTD measure as values. A tile style slicer was added with Stores[Country] as the field to allow users to filter by country or show all countries. 
 
@@ -73,10 +75,34 @@ A drillthrough page was created to allow users to quickly see an overview of a s
 
 A tooltip page was created to enable users to quickly see each stores Profit YTD performance against the profit target by hovering over a store on the map. The profit gauge visual created in the previous step was copied to the tooltip page. 
 
+# Part 7, cross-filtering and navigation (milestone 9)
+
+In the executive summary report page, interactions were edited to the Product Category bar chart would not filter card visuals or KPIs. The Top 10 Products table was set so that it wold not affect any other visuals.
+
+In the customer detail report page, the Top 20 Customers table was set to not filter any other visuals. The Total customers by Product bar chart was set to not filter the Customers line graph. The Total Customers by Country donut chart was set to have cross-filtering with the Total Customers by Product bar chart. 
+
+In the product detail page, the Orders vs. Profitability graph was set to have no interactions with other visuals.
+
+The navigation bar was completed to enable users to navigate between report pages by clicking on the corresponding icon. 4 buttons were created with custom images to represent each of the 4 report pages. Each button was formatted by formatting the Button Style so that the button would appear a different colour when a user hovers over the button. The Action format option was edited for each button to define each button type as Page Navigation and then link each button to the appropriate page. The buttons were copied across all report pages to enable navigation from any page to another. 
+
 ## Installation instructions
+No specific installation instructions 
 
 ## Usage instructions
+The report is split into 4 main sections:
+Executive Summary page - provides a high level overview of the data across all categories
+Customer Detail page - provides a more detailed view of the number of customers and the distribution of customers according to country and product category, as well as the top spending customers
+Product Detail page - provides a more detailed view of the performance and profitability of different products according to cateogry and country
+Stores Map page - a map visual displaying the YTD Profit for different regions
+
+Use the navigation bar on the left hand side of each report page to navigate between pages.
+Visuals on each report page can be interacted with to reveal data for specific selections. 
+The Product Detail page contains a filtering sidebar which can be accessed by ctrl + clicking the filter button to enable users to filter by country and category.
+The Stores Map page has a tooltip that enables users to quickly see store profit performance by hovering over different areas.
 
 ## File structure
-
-## License information
+All files are contained in the main project file.
+Various labelled screenshots are incldued to show:
+-  Final report pages and filtered pages
+-  DAX formulae used to calculcate measures or calculated columns to create visuals
+-  Filters applied to various visuals to achieve the desired results 
