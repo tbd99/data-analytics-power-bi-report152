@@ -1,5 +1,5 @@
 # data-analytics-power-bi-report152
-The aim of this project is to create a Power BI report for a a medium-sized international retailer to transofrm sales data into actionable insights using a robust data model to construct a multi page report. The report will present a high-level business summary for C-suite executives as well as giving insights into the highest value customers, segmented by sales region. The report will provide a detailed analysis of top-performing products, categorised by type against sales targets, as well as a map visual spotlighting the performance metrics of retail outlets across different territories.
+The aim of this project is to create a Power BI report for a a medium-sized international retailer to transofrm sales data into actionable insights using a robust data model to construct a multi page report. The report will present a high-level business summary for C-suite executives as well as giving insights into the highest value customers, segmented by sales region. The report will provide a detailed analysis of top-performing products, categorised by type against sales targets, as well as a map visual spotlighting the performance metrics of retail outlets across different territories. Supplementary SQL metrics will also be created in order to provide data insights to clients who do not have access to Power BI. 
 
 ## Project description
 
@@ -85,8 +85,28 @@ In the product detail page, the Orders vs. Profitability graph was set to have n
 
 The navigation bar was completed to enable users to navigate between report pages by clicking on the corresponding icon. 4 buttons were created with custom images to represent each of the 4 report pages. Each button was formatted by formatting the Button Style so that the button would appear a different colour when a user hovers over the button. The Action format option was edited for each button to define each button type as Page Navigation and then link each button to the appropriate page. The buttons were copied across all report pages to enable navigation from any page to another. 
 
+# Part 8, Creating metrics in SQL (milestone 10)
+Additional metrics were created in SQL to provide data insights to clients who do not have access to Power BI. 
+In this part, data was queried from a Postgres database hosted on Microsoft Azure by connecting to the server in VSCode using the SQLTools extension
+
+A list of table names was printed and saved to a .csv file. Lists of column names for each respecive table were printed and saved to .csv files. 
+
+SQL queries were constructed to answer the following questions:
+
+1. How many staff are there in all of the UK stores?
+
+2. Which month in 2022 has had the highest revenue?
+
+3. Which German store type had the highest revenue for 2022?
+
+4. Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders
+
+5. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
+
+Details of the SQL queries used to answer these questions can be found in the SQL_metrics subfolder.
 ## Installation instructions
-No specific installation instructions 
+Power BI access is required to view the Power BI report.
+SQL queries were created in VSCode using the SQL tools module to query the Postgres database server hosted on Microsoft Azure. 
 
 ## Usage instructions
 The report is split into 4 main sections:
@@ -100,9 +120,11 @@ Visuals on each report page can be interacted with to reveal data for specific s
 The Product Detail page contains a filtering sidebar which can be accessed by ctrl + clicking the filter button to enable users to filter by country and category.
 The Stores Map page has a tooltip that enables users to quickly see store profit performance by hovering over different areas.
 
+SQL metrics and files can be found in the SQL_metrics subfolder
 ## File structure
-All files are contained in the main project file.
+All Power BI files and related screenshots are contained in the main project file.
 Various labelled screenshots are incldued to show:
 -  Final report pages and filtered pages
 -  DAX formulae used to calculcate measures or calculated columns to create visuals
 -  Filters applied to various visuals to achieve the desired results 
+SQL files and results are saved in the SQL_metrics subfolder
