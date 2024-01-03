@@ -55,7 +55,7 @@ A set of three KPI visuals were created to show Quarterly Revenue, Quarterly Pro
 
 Finally, a date slicer was added to enable users to fitler the report page by year.
 
-## Part 5, building the Product Detail report page (milestone 7)
+### Part 5, building the Product Detail report page (milestone 7)
 Gauge visuals were created to show the current performance of Orders, Revenue and Profit against quarterly targets, these were created using measures constructed using DAX formulae. Maximum gauge value was set to the quarterly target for each measure, and conditional formatting was applied so the callout value would show red if the target it not met, and black if it is. 
 
 An area chart was created to show the performance of different product categories over time. Total Revenue was plotted against Dates[Start of Quarter] with Products[Category] as the legend.
@@ -68,14 +68,14 @@ A slicer filter toolbar was created to allow users to control how the data on th
 
 Measures were created to show the selected value for each slicer. These measures were used to create card visuals to display the categories selected to the user. 
 
-# Part 6, building the Stores Map page (milestone 8)
+### Part 6, building the Stores Map page (milestone 8)
 A map visual was created using the previously created geographical hierarchy with the Profit YTD measure as values. A tile style slicer was added with Stores[Country] as the field to allow users to filter by country or show all countries. 
 
 A drillthrough page was created to allow users to quickly see an overview of a store's performance. A table was created to show the top 5 products based on total revenue, with columns: Description, Profit YTD, Total Orders, Total Revenue. A column chart showing the Total Orders by product category for the store was created. Gauges were created for Profit YTD against a profit target of 20% year-on-year growth vs. the same period in the previous year. An equivalent gauge was created for Revenue YTD. Measures were calculcated to derive profit and revenue targets. A card visual was created to show the currently selected store. 
 
 A tooltip page was created to enable users to quickly see each stores Profit YTD performance against the profit target by hovering over a store on the map. The profit gauge visual created in the previous step was copied to the tooltip page. 
 
-# Part 7, cross-filtering and navigation (milestone 9)
+### Part 7, cross-filtering and navigation (milestone 9)
 
 In the executive summary report page, interactions were edited to the Product Category bar chart would not filter card visuals or KPIs. The Top 10 Products table was set so that it wold not affect any other visuals.
 
@@ -85,7 +85,7 @@ In the product detail page, the Orders vs. Profitability graph was set to have n
 
 The navigation bar was completed to enable users to navigate between report pages by clicking on the corresponding icon. 4 buttons were created with custom images to represent each of the 4 report pages. Each button was formatted by formatting the Button Style so that the button would appear a different colour when a user hovers over the button. The Action format option was edited for each button to define each button type as Page Navigation and then link each button to the appropriate page. The buttons were copied across all report pages to enable navigation from any page to another. 
 
-# Part 8, Creating metrics in SQL (milestone 10)
+### Part 8, Creating metrics in SQL (milestone 10)
 Additional metrics were created in SQL to provide data insights to clients who do not have access to Power BI. 
 In this part, data was queried from a Postgres database hosted on Microsoft Azure by connecting to the server in VSCode using the SQLTools extension
 
