@@ -1,7 +1,13 @@
 # data-analytics-power-bi-report152
+## Project overview
 The aim of this project is to create a Power BI report for a a medium-sized international retailer to transofrm sales data into actionable insights using a robust data model to construct a multi page report. The report will present a high-level business summary for C-suite executives as well as giving insights into the highest value customers, segmented by sales region. The report will provide a detailed analysis of top-performing products, categorised by type against sales targets, as well as a map visual spotlighting the performance metrics of retail outlets across different territories. Supplementary SQL metrics will also be created in order to provide data insights to clients who do not have access to Power BI. 
 
-## Project description
+## Table of Contents
+1. [Detailed project description](#Detailed project description)
+   - [Part 1, loading and transforming data in Power BI (milestone 2)](#Part 1, loading and transforming data in Power BI (milestone 2))
+   
+
+## Detailed project description
 
 ### Part 1, loading and transforming data in Power BI (milestone 2)
 The Orders table was loaded from an Azure SQL database and data was transformed to filter null/missing values and columns were edited in Power Query Editor. Order Date and Shipping Date columns were each split into a date column and a time column. Sensitive data was removed to ensure data privacy.
@@ -122,9 +128,16 @@ The Stores Map page has a tooltip that enables users to quickly see store profit
 
 SQL metrics and files can be found in the SQL_metrics subfolder
 ## File structure
-All Power BI files and related screenshots are contained in the main project file.
-Various labelled screenshots are incldued to show:
+The Power BI report session and README file are contained in the top level of the project folder. 
+Work from each milestone of the project (3, 5, 6, 7, 8, 9) are divided into subfolders corresponding to the milestone number. 
+Miilestone 3 is the data modelling portion of the project.
+Milestone 5 is the construction of the customer detail report page.
+Milestone 6 is the construction of the executive summary report page.
+Milestone 7 is the construction of the product detail report page.
+Milestone 8 is the construction of the stores map page.
+Milestone 9 is the finalisation of the entire Power BI report, including cross-filtering and navigation between report pages.
+In each of these subfolders various labelled screenshots are incldued to show:
 -  Final report pages and filtered pages
 -  DAX formulae used to calculcate measures or calculated columns to create visuals
 -  Filters applied to various visuals to achieve the desired results 
-SQL files and results are saved in the SQL_metrics subfolder
+SQL files and results (Milestone 10) are saved in the SQL_metrics subfolder
