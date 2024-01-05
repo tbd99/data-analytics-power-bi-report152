@@ -3,8 +3,8 @@
 The aim of this project is to create a Power BI report for a a medium-sized international retailer to transofrm sales data into actionable insights using a robust data model to construct a multi page report. The report will present a high-level business summary for C-suite executives as well as giving insights into the highest value customers, segmented by sales region. The report will provide a detailed analysis of top-performing products, categorised by type against sales targets, as well as a map visual spotlighting the performance metrics of retail outlets across different territories. Supplementary SQL metrics will also be created in order to provide data insights to clients who do not have access to Power BI. 
 
 ## Table of Contents
-1. [Detailed project description](#Detailed project description)
-   - [Part 1, loading and transforming data in Power BI (milestone 2)](#Part 1, loading and transforming data in Power BI (milestone 2))
+1. [Part 1](#part-1-loading-and-transforming-data-in-power-bi-milestone-2)
+
    
 
 ## Detailed project description
