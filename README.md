@@ -5,10 +5,16 @@ The aim of this project is to create a Power BI report for a a medium-sized inte
 ## Table of Contents
 1. [Detailed project description](#detailed-project-description)
     - [Part 1, loading and transforming data in Power BI (milestone 2)](#part-1-loading-and-transforming-data-in-power-bi-milestone-2)
-    - 
-2. [Part 1](#part-1-loading-and-transforming-data-in-power-bi-milestone-2)
-
-   
+    - [Part 2, creating a data model (milestone 3)](#part-2-creating-a-data-model-milestone-3)
+    - [Part 3, building the Customer Detail report page (milestone 5)](#part-3-building-the-customer-detail-report-page-milestone-5)
+    - [Part 4, building the Executive Summary report page (milestone 6)](#part-4-building-the-executive-summary-report-page-milestone-6)
+    - [Part 5, building the Product Detail report page (milestone 7)](#part-5-building-the-product-detail-report-page-milestone-7)
+    - [Part 6, building the Stores Map page (milestone 8)](#part-6-building-the-stores-map-page-milestone-8)
+    - [Part 7, cross-filtering and navigation (milestone 9)](#part-7-cross-filtering-and-navigation-milestone-9)
+    - [Part 8, Creating metrics in SQL (milestone 10)](#part-8-creating-metrics-in-sql-milestone-10)
+2. [Installation instructions](#installation-instructions)
+3. [Usage instructions](#usage-instructions)
+4. [File structure](#file-structure)
 
 ## Detailed project description
 
