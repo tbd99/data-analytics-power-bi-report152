@@ -17,7 +17,7 @@ The aim of this project is to create a Power BI report for a a medium-sized inte
        - [Customers line chart](#customers-line-chart)
        - [Customers table](#customers-table)
        - [Top customers card visuals](#top-customers-card-visuals)
-       - [Customers slicer](#customers-slicer)
+       - [Customers slicer and full report](#customers-slicer-and-full-report)
     - [Part 4, building the Executive Summary report page (milestone 6)](#part-4-building-the-executive-summary-report-page-milestone-6)
        - [Executive summary headline card visuals](#executive-summary-headline-card-visuals)
        - [Executive summary line chart](#executive-summary-line-chart)
@@ -25,7 +25,7 @@ The aim of this project is to create a Power BI report for a a medium-sized inte
        - [Executive summary clustered bar chart](#executive-summary-clustered-bar-chart)
        - [Executive summary table](#executive-summary-table)
        - [Executive summary KPIs](#executive-summary-kpis)
-       - [Executive summary slicer](#executive-summary-slicer)
+       - [Executive summary slicer and full report](#executive-summary-slicer-and-full-report)
     - [Part 5, building the Product Detail report page (milestone 7)](#part-5-building-the-product-detail-report-page-milestone-7)   
        - [Product detail gauge visuals](#product-detail-gauge-visuals)
        - [Product detail area chart](#product-detail-area-chart)
@@ -152,7 +152,7 @@ Top Customer Revenue = CALCULATE([Total Revenue], FILTER('Customers', 'Customers
 
 ![Alt text](images_and_visualisations/milestone_5_customer_detail_report_images/top_customer_card_visuals.png)
 
-### Customers slicer
+### Customers slicer and full report
 Finally, a date slicer was added to enable users to fitler the report page by year. The final report page is shown below 
 
 ![Alt text](images_and_visualisations/milestone_5_customer_detail_report_images/Customer_detail_report_milestone5.png)
@@ -196,7 +196,7 @@ Revenue Target = [Previous Quarter Revenue] * 1.05
 
 ![Alt text](images_and_visualisations/milestone_6_executive_summary_report_images/executive_summary_KPIs.png)
 
-### Executive summary slicer
+### Executive summary slicer and full report
 Finally, a date slicer was added to enable users to fitler the report page by year. The final report page is shown below.
 
 ![Alt text](images_and_visualisations/milestone_6_executive_summary_report_images/Executive_summary_report_milestone6.png)
