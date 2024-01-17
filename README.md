@@ -138,13 +138,13 @@ The Stores Map page has a tooltip that enables users to quickly see store profit
 SQL metrics and files can be found in the SQL_metrics subfolder
 ## File structure
 The Power BI report session and README file are contained in the top level of the project folder. 
-Work from each milestone of the project (3, 5, 6, 7, 8, 9) are divided into subfolders corresponding to the milestone number. 
-Miilestone 3 is the data modelling portion of the project.
-Milestone 5 is the construction of the customer detail report page.
-Milestone 6 is the construction of the executive summary report page.
-Milestone 7 is the construction of the product detail report page.
-Milestone 8 is the construction of the stores map page.
-Milestone 9 is the finalisation of the entire Power BI report, including cross-filtering and navigation between report pages.
+The images_and_visualisations folder contains images of working and visualisation from each of the sections of the project. Within this folder work from each milestone of the project (3, 5, 6, 7, 8, 9) are divided into subfolders corresponding to the milestone number. 
+- Miilestone 3 is the data modelling portion of the project.
+- Milestone 5 is the construction of the customer detail report page.
+- Milestone 6 is the construction of the executive summary report page.
+- Milestone 7 is the construction of the product detail report page.
+- Milestone 8 is the construction of the stores map page.
+- Milestone 9 is the finalisation of the entire Power BI report, including cross-filtering and navigation between report pages.
 In each of these subfolders various labelled screenshots are incldued to show:
 -  Final report pages and filtered pages
 -  DAX formulae used to calculcate measures or calculated columns to create visuals
