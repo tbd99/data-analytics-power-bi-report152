@@ -32,6 +32,7 @@ The aim of this project is to create a Power BI report for a a medium-sized inte
        - [Product detail table](#product-detail-table)
        - [Product detail scatter graph](#product-detail-scatter-graph)
        - [Product detail slicer](#product-detail-slicer)
+       - [Product detail report page](#product-detail-report-page)
     - [Part 6, building the Stores Map page (milestone 8)](#part-6-building-the-stores-map-page-milestone-8)
        - [Stores map visual](#stores-map-visual)
        - [Stores map drillthrough](#stores-map-drillthrough)
@@ -221,7 +222,7 @@ An area chart was created to show the performance of different product categorie
 
 ![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/product_detail_area_chart_filtered.png)
 
-This plot shows the area chart for the food-and-drink product category, the full unfiltered plot showing all categories can be seen in the full report page [below](#product-detail-slicer). 
+This plot shows the area chart for the food-and-drink product category, the full unfiltered plot showing all categories can be seen in the full report page [below](#product-detail-report-page). 
 
 ### Product detail table
 The top 10 products table was copied from the Executive summary page and formatted to fit the style of this report page.
@@ -237,7 +238,7 @@ Profit per Item = 'Products'[Sale Price] - 'Products'[Cost Price]
 
 ![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/product_detail_scatter_graph_filtered.png)
 
-This plot shows the scatter plot for the food-and-drink product category, the full unfiltered plot showing all categories can be seen in the full report page [below](#product-detail-slicer). 
+This plot shows the scatter plot for the food-and-drink product category, the full unfiltered plot showing all categories can be seen in the full report page [below](#product-detail-report-page). 
 
 ### Product detail slicer
 A slicer filter toolbar was created to allow users to control how the data on the page are filtered. Two new vertical list slicers were created to enable the user to filter by Product Category from Products[Category] and Country from Stores[Country]. A slicer toolbar was created with these slicers and a back button. 
@@ -261,15 +262,14 @@ Category Selection = CONCATENATEX(VALUES(Products[Category]),Products[Category])
 
 ![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/product_detail_selection_cards.png)
 
-The report page with filters selected will then display data for only the category and country selected. For example, selecting the diy category for the UK will give:
+### Product detail report page 
+The report page with filters selected will display data for only the category and country selected. For example, selecting the diy category for the UK will give:
 
 ![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/Product_detail_report_with_filters_selected_milestone7.png)
 
 The full report page can be seen by deselecting filters, displaying all the data as seen here:
 
 ![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/Product_detail_report_milestone7.png)
-
-
 
 ## Part 6, building the Stores Map page (milestone 8)
 ### Stores map visual
