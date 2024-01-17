@@ -202,21 +202,74 @@ Finally, a date slicer was added to enable users to fitler the report page by ye
 
 ## Part 5, building the Product Detail report page (milestone 7)
 ### Product detail gauge visuals
-Gauge visuals were created to show the current performance of Orders, Revenue and Profit against quarterly targets, these were created using measures constructed using DAX formulae. Maximum gauge value was set to the quarterly target for each measure, and conditional formatting was applied so the callout value would show red if the target it not met, and black if it is. 
+Gauge visuals were created to show the current quarterly performance of Orders, Revenue and Profit against quarterly targets, these were created using measures constructed using DAX formulae. With the Orders, Revenue and Profit calculated for the quarter to date, and the target values for the next quarter calculcated as a 10% increase from the previous quarter. Maximum gauge value was set to the quarterly target for each measure, and conditional formatting was applied so the callout value would show red if the target it not met, and black if it is. 
+
+~~~
+Orders This Quarter = TOTALQTD([Total Orders], 'Orders'[Order Date])
+Profit This Quarter = TOTALQTD([Total Profit], 'Orders'[Order Date])
+Revenue This Quarter = TOTALQTD([Total Revenue], 'Orders'[Order Date])
+
+Orders Quarterly Target = [Orders This Quarter] * 1.1
+Profit Quarterly Target = [Profit This Quarter] * 1.1
+Revenue Quarterly Target = [Revenue This Quarter] * 1.1
+~~~
+
+![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/product_detail_gauge_visuals_filtered.png)
 
 ### Product detail area chart
-An area chart was created to show the performance of different product categories over time. Total Revenue was plotted against Dates[Start of Quarter] with Products[Category] as the legend.
+An area chart was created to show the performance of different product categories over time. Total Revenue was plotted against Dates[Start of Quarter] with Products[Category] as the legend. 
+
+![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/product_detail_area_chart_filtered.png)
+
+This plot shows the area chart for the food-and-drink product category, the full unfiltered plot showing all categories can be seen in the full report page [below](#product-detail-slicer). 
 
 ### Product detail table
-The top 10 products table was copied from the Executive summary page and formatted. 
+The top 10 products table was copied from the Executive summary page and formatted to fit the style of this report page.
+
+![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/product_detail_table.png)
 
 ### Product detail scatter graph
 A scatter graph was created to show the quantity of sales for each product category against profit per item. A calculated column was used to plot Profit per Item. Products[Total Quantity] was plotted against Products[Profit per Item] with Products[Description] as values and Products[Category] as the legend. 
 
+~~~
+Profit per Item = 'Products'[Sale Price] - 'Products'[Cost Price]
+~~~
+
+![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/product_detail_scatter_graph_filtered.png)
+
+This plot shows the scatter plot for the food-and-drink product category, the full unfiltered plot showing all categories can be seen in the full report page [below](#product-detail-slicer). 
+
 ### Product detail slicer
-A slicer filter toolbar was created to allow users to control how the data on the page are filtered. Two new vertical list slicers were created to enable the user to filter by Product Category from Products[Category] and Country from Stores[Country]. A slicer toolbar was created with these slicers and a back button, linked to a bookmark with the toolbar hidden to allow users to click back to the main report page. A filter button was created on the main report page, linked to a bookmark with the toolbar open to allows users to navigate to the slicer toolbar from the main report page. 
+A slicer filter toolbar was created to allow users to control how the data on the page are filtered. Two new vertical list slicers were created to enable the user to filter by Product Category from Products[Category] and Country from Stores[Country]. A slicer toolbar was created with these slicers and a back button. 
+
+![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/product_detail_category_selection.png)
+
+The back button was linked to a bookmark where the toolbar is hidden, this enables users to click back to the main report page using the back button. 
+
+![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/Product_detail_report_filters_on_milestone7.png)
+
+A filter button was created on the main report page, linked to a bookmark with the toolbar open to allows users to navigate to the slicer toolbar from the main report page. 
+
+![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/Product_detail_report_milestone7.png)
 
 Measures were created to show the selected value for each slicer. These measures were used to create card visuals to display the categories selected to the user. 
+
+~~~
+Country Selection = CONCATENATEX(VALUES(Stores[Country]),Stores[Country])
+Category Selection = CONCATENATEX(VALUES(Products[Category]),Products[Category])
+~~~
+
+![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/product_detail_selection_cards.png)
+
+The report page with filters selected will then display data for only the category and country selected. For example, selecting the diy category for the UK will give:
+
+![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/Product_detail_report_with_filters_selected_milestone7.png)
+
+The full report page can be seen by deselecting filters, displaying all the data as seen here:
+
+![Alt text](images_and_visualisations/milestone_7_product_detail_report_images/Product_detail_report_milestone7.png)
+
+
 
 ## Part 6, building the Stores Map page (milestone 8)
 ### Stores map visual
