@@ -275,11 +275,33 @@ The full report page can be seen by deselecting filters, displaying all the data
 ### Stores map visual
 A map visual was created using the previously created geographical hierarchy with the Profit YTD measure as values. A tile style slicer was added with Stores[Country] as the field to allow users to filter by country or show all countries. 
 
+~~~
+Profit YTD = CALCULATE(SUMX(Orders, 'Orders'[Product Quantity] * (RELATED('Products'[Sale Price]) - RELATED('Products'[Cost Price]))), DATESYTD(‘Dates'[Date]))
+~~~
+
+![Alt text](images_and_visualisations/milestone_8_stores_map_page_images/Stores_map_page_report_milestone8.png)
+
 ### Stores map drillthrough
-A drillthrough page was created to allow users to quickly see an overview of a store's performance. A table was created to show the top 5 products based on total revenue, with columns: Description, Profit YTD, Total Orders, Total Revenue. A column chart showing the Total Orders by product category for the store was created. Gauges were created for Profit YTD against a profit target of 20% year-on-year growth vs. the same period in the previous year. An equivalent gauge was created for Revenue YTD. Measures were calculcated to derive profit and revenue targets. A card visual was created to show the currently selected store. 
+A drillthrough page was created to allow users to quickly see an overview of a store's performance. 
+- A table was created to show the top 5 products based on total revenue, with columns: Description, Profit YTD, Total Orders, Total Revenue. 
+- A column chart showing the Total Orders by product category for the store was created. 
+- A card visual was created to show the region of the currently selected store. 
+- Gauges were created for Profit YTD against a profit target of 20% year-on-year growth vs. the same period in the previous year. An equivalent gauge was created for Revenue YTD. Measures were calculcated to derive current year profit and revenue and targets. 
+
+~~~
+Profit YTD = CALCULATE(SUMX(Orders, 'Orders'[Product Quantity] * (RELATED('Products'[Sale Price]) - RELATED('Products'[Cost Price]))), DATESYTD(‘Dates'[Date]))
+Revenue YTD = CALCULATE((SUMX(Orders, 'Orders'[Product Quantity] * RELATED('Products'[Sale Price]))), DATESYTD(‘Dates'[Date]))
+
+Profit Goal = CALCULATE([Profit YTD], SAMEPERIODLASTYEAR(Dates[Date]))*1.2
+Revenue Goal = CALCULATE([Revenue YTD], SAMEPERIODLASTYEAR(Dates[Date]))*1.2
+~~~
+
+![Alt text](images_and_visualisations/milestone_8_stores_map_page_images/stores_map_drillthrough.png)
 
 ### Stores map tooltip 
-A tooltip page was created to enable users to quickly see each stores Profit YTD performance against the profit target by hovering over a store on the map. The profit gauge visual created in the previous step was copied to the tooltip page. 
+A tooltip page was created to enable users to quickly see each stores Profit YTD performance against the profit target by hovering over a store on the map. The profit gauge visual created in the previous step was copied to the tooltip page, showing Profit YTD against a target. An additional card visual was added to display the region of the selected store. 
+
+![Alt text](images_and_visualisations/milestone_8_stores_map_page_images/stores_map_tooltip.png)
 
 ## Part 7, cross-filtering and navigation (milestone 9)
 
@@ -291,7 +313,9 @@ In the customer detail report page, the Top 20 Customers table was set to not fi
 In the product detail page, the Orders vs. Profitability graph was set to have no interactions with other visuals.
 
 ### Completing the navigation bar 
-The navigation bar was completed to enable users to navigate between report pages by clicking on the corresponding icon. 4 buttons were created with custom images to represent each of the 4 report pages. Each button was formatted by formatting the Button Style so that the button would appear a different colour when a user hovers over the button. The Action format option was edited for each button to define each button type as Page Navigation and then link each button to the appropriate page. The buttons were copied across all report pages to enable navigation from any page to another. 
+The navigation bar was completed to enable users to navigate between report pages by clicking on the corresponding icon. 4 buttons were created with custom images to represent each of the 4 report pages. Each button was formatted by formatting the button style so that the button would appear a different colour when a user hovers over the button. The Action format option was edited for each button to define each button type as Page Navigation and then link each button to the appropriate page. The buttons were copied across all report pages to enable navigation from any page to another. 
+
+![Alt text](images_and_visualisations/milestone_9_navigation_cross_filtering_images/Executive_summary_report_with_navigation_bar_milestone9.png)
 
 ## Part 8, Creating metrics in SQL (milestone 10)
 Additional metrics were created in SQL to provide data insights to clients who do not have access to Power BI. 
