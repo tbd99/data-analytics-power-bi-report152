@@ -323,19 +323,91 @@ In this part, data was queried from a Postgres database hosted on Microsoft Azur
 
 A list of table names was printed and saved to a .csv file. Lists of column names for each respecive table were printed and saved to .csv files. 
 
-SQL queries were constructed to answer the following questions:
+SQL queries were constructed to answer the following questions, with outputs saved as .csv files in the 'SQL_metrics' folder.
 
 ### 1. How many staff are there in all of the UK stores?
+A SQL query was contructed to determine how many staff there are in all UK stores. The UK country code was first determined to enable selection based on country code. 
+~~~
+SELECT DISTINCT country_code FROM dim_store; 
+
+SELECT SUM(staff_numbers) 
+FROM 
+     dim_store 
+WHERE 
+     country_code IN ('GB');
+~~~
+Question 1 result: 13273 staff 
 
 ### 2. Which month in 2022 has had the highest revenue?
+A SQL query was contructed to determine the highest revenue month in 2022. Revenue was calculated as a sum of the sale price and grouped by month name to calculate monthly revenue. The results were ordered and limited to 1 to obtain the top performing month. 
+
+~~~
+SELECT SUM(sale_price), month_name
+FROM forquerying2
+GROUP BY month_name 
+ORDER BY SUM(sale_price) DESC
+LIMIT 1;
+~~~
+Question 2 result: October
 
 ### 3. Which German store type had the highest revenue for 2022?
+A SQL query was contructed to determine the highest revenue store type in Germany. Revenue was calculated as a sum of the sale price and grouped by store type to calculate monthly revenue. The results were ordered and limited to 1 to obtain the top performing store type. 
+
+~~~
+SELECT SUM(sale_price), store_type
+FROM forquerying2
+WHERE country = 'Germany'
+GROUP BY store_type
+ORDER BY SUM(sale_price) DESC
+LIMIT 1;
+~~~
+Question 3 result: Local store type 
 
 ### 4. Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders
+A SQL query was constucted to show the total sales, percentage of total sales, and count of orders for each store type. 
+
+A table expression was used to calculate these metrics.  
+Total sales was calculated as the sale price mutliplied by number of orders. Order count was calculated by counting unique orders using the order_date_uuid. The table expression enabled calculation of total sales across all store types, allowing for the calculation of percentage of total sales for each category.
+An inner join was used to match store and product codes from the orders table. Results were grouped by store type to obtain the required table. 
+
+~~~
+WITH table_expression AS (SELECT
+                      SUM(dim_product.sale_price*orders.product_quantity) AS total_sales,
+                      COUNT(orders.order_date_uuid) AS order_count,
+                      dim_store.store_type as store_type
+                      FROM orders
+                      JOIN dim_product ON dim_product.product_code = orders.product_code
+                      JOIN dim_store ON dim_store.store_code = orders.store_code
+                      GROUP BY dim_store.store_type),
+absolute_total_sales AS (SELECT
+                     SUM(table_expression.total_sales) AS absolute_total_sales
+                     FROM table_expression)
+SELECT table_expression.store_type,
+       table_expression.total_sales,
+       table_expression.order_count,
+       ((table_expression.total_sales/(SELECT absolute_total_sales FROM absolute_total_sales))*100) AS percentage_sales
+       FROM table_expression
+ORDER BY percentage_sales DESC;
+~~~
+
+The resulting view can be seen below
+
 
 ### 5. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
+A SQL query was contructed to determine the highest profit category in the "Wiltshire, UK" region in 2021. Profit was calculated as sale price minus the cost price. Results were selected for the the "Wiltshire, UK" region and grouped by category. The results were ordered and limited to 1 to obtain the top performing category. 
 
-Details of the SQL queries used to answer these questions can be found in the SQL_metrics subfolder.
+~~~
+SELECT SUM(sale_price - cost_price) AS profit, category
+FROM forquerying2
+WHERE full_region = 'Wiltshire, UK'
+GROUP BY category
+ORDER BY profit DESC
+LIMIT 1;
+~~~
+Question 5 result: Homeware
+
+The SQL queries used to answer these questions can be found as .sql files in the SQL_metrics subfolder. Results of each query are saved as .csv files here also. 
+
 ## Installation instructions
 Power BI access is required to view the Power BI report.
 SQL queries were created in VSCode using the SQL tools module to query the Postgres database server hosted on Microsoft Azure. 
@@ -352,7 +424,7 @@ Visuals on each report page can be interacted with to reveal data for specific s
 The Product Detail page contains a filtering sidebar which can be accessed by ctrl + clicking the filter button to enable users to filter by country and category.
 The Stores Map page has a tooltip that enables users to quickly see store profit performance by hovering over different areas.
 
-SQL metrics and files can be found in the SQL_metrics subfolder
+SQL metrics and files can be found in the SQL_metrics subfolder.
 ## File structure
 The Power BI report session and README file are contained in the top level of the project folder. 
 The images_and_visualisations folder contains images of working and visualisation from each of the sections of the project. Within this folder work from each milestone of the project (3, 5, 6, 7, 8, 9) are divided into subfolders corresponding to the milestone number. 
@@ -361,9 +433,11 @@ The images_and_visualisations folder contains images of working and visualisatio
 - Milestone 6 is the construction of the executive summary report page.
 - Milestone 7 is the construction of the product detail report page.
 - Milestone 8 is the construction of the stores map page.
-- Milestone 9 is the finalisation of the entire Power BI report, including cross-filtering and navigation between report pages.
+- Milestone 9 is the finalisation of the entire Power BI report, including cross-filtering and navigation between report pages.\
+
 In each of these subfolders various labelled screenshots are incldued to show:
 -  Final report pages and filtered pages
 -  DAX formulae used to calculcate measures or calculated columns to create visuals
 -  Filters applied to various visuals to achieve the desired results 
-SQL files and results (Milestone 10) are saved in the SQL_metrics subfolder
+
+SQL files and results (Milestone 10) are saved in the SQL_metrics subfolder.
