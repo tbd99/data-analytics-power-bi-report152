@@ -338,6 +338,8 @@ WHERE
 ~~~
 Question 1 result: 13273 staff 
 
+![Alt text](SQL_metrics/question1_screenshot.png)
+
 ### 2. Which month in 2022 has had the highest revenue?
 A SQL query was contructed to determine the highest revenue month in 2022. Revenue was calculated as a sum of the sale price and grouped by month name to calculate monthly revenue. The results were ordered and limited to 1 to obtain the top performing month. 
 
@@ -349,6 +351,8 @@ ORDER BY SUM(sale_price) DESC
 LIMIT 1;
 ~~~
 Question 2 result: October
+
+![Alt text](SQL_metrics/question2_screenshot.png)
 
 ### 3. Which German store type had the highest revenue for 2022?
 A SQL query was contructed to determine the highest revenue store type in Germany. Revenue was calculated as a sum of the sale price and grouped by store type to calculate monthly revenue. The results were ordered and limited to 1 to obtain the top performing store type. 
@@ -362,6 +366,8 @@ ORDER BY SUM(sale_price) DESC
 LIMIT 1;
 ~~~
 Question 3 result: Local store type 
+
+![Alt text](SQL_metrics/question3_screenshot.png)
 
 ### 4. Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders
 A SQL query was constucted to show the total sales, percentage of total sales, and count of orders for each store type. 
@@ -392,6 +398,7 @@ ORDER BY percentage_sales DESC;
 
 The resulting view can be seen below
 
+![Alt text](SQL_metrics/question4_screenshot.png)
 
 ### 5. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
 A SQL query was contructed to determine the highest profit category in the "Wiltshire, UK" region in 2021. Profit was calculated as sale price minus the cost price. Results were selected for the the "Wiltshire, UK" region and grouped by category. The results were ordered and limited to 1 to obtain the top performing category. 
@@ -406,7 +413,9 @@ LIMIT 1;
 ~~~
 Question 5 result: Homeware
 
-The SQL queries used to answer these questions can be found as .sql files in the SQL_metrics subfolder. Results of each query are saved as .csv files here also. 
+![Alt text](SQL_metrics/question5_screenshot.png)
+
+The SQL queries used to answer these questions can be found as .sql files in the SQL_metrics subfolder. Results of each query are saved as .csv files in the same folder. 
 
 ## Installation instructions
 Power BI access is required to view the Power BI report.
