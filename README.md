@@ -19,7 +19,15 @@ The aim of this project is to create a Power BI report for a a medium-sized inte
        - [Top customers card visuals](#top-customers-card-visuals)
        - [Customers slicer](#customers-slicer)
     - [Part 4, building the Executive Summary report page (milestone 6)](#part-4-building-the-executive-summary-report-page-milestone-6)
+       - [Executive summary headline card visuals](#executive-summary-headline-card-visuals)
+       - [Executive summary line chart](#executive-summary-line-chart)
+       - [Executive summary donut charts](#executive-summary-donut-charts)
+       - [Executive summary clustered bar chart](#executive-summary-clustered-bar-chart)
+       - [Executive summary table](#executive-summary-table)
+       - [Executive summary KPIs](#executive-summary-kpis)
+       - [Executive summary slicer](#executive-summary-slicer)
     - [Part 5, building the Product Detail report page (milestone 7)](#part-5-building-the-product-detail-report-page-milestone-7)
+       - [Product detail gauge visuals](#)
     - [Part 6, building the Stores Map page (milestone 8)](#part-6-building-the-stores-map-page-milestone-8)
     - [Part 7, cross-filtering and navigation (milestone 9)](#part-7-cross-filtering-and-navigation-milestone-9)
     - [Part 8, Creating metrics in SQL (milestone 10)](#part-8-creating-metrics-in-sql-milestone-10)
@@ -76,31 +84,43 @@ A set of three card visuals were created to show the top customer by revenue, di
 Finally, a date slicer was added to enable users to fitler the report page by year.
 
 ## Part 4, building the Executive Summary report page (milestone 6)
+### Executive summary headline card visuals
 Headline card visuals were created to show the Total Revenue, Total Orders and Total Profit, these were created using measures previously constructed using DAX formulae.
 
+### Executive summary line chart
 A line chart was created to show Total Revenue over time. The date hierarchy created in milestone 3 was used to define the Y axis, enabling users to drill down from the year level to the month level. A trend line was added, as well as a forecast line over the next 10 periods with a 95% confidence interval.
 
+### Executive summary donut charts
 A donut chart was created to show the total revenue per store country, the 'Country' column in the Stores table was used to filter the Total Revenue measure to create this chart.
 
 A donut chart was created to show the total revenue per store type, the 'Store Type' column in the Stores table was used to filter the Total Revenue measure to create this chart.
 
+### Executive summary clustered bar chart
 A clustered bar chart was created showing the number of orders per each product category, the 'Category' column in the Products table was used to filter the Total Orders measure to create this chart.
 
+### Executive summary table
 A table was created to display the top 10 products based on revenue. The table shows the Product Description, Category, Total Orders, Total Customers and the Total Revenue generated for each product. TopN filtering was used to filter for the top 10 customers by revenue. Conditional formatting was applied to add data bars to the Total Revenue column.
 
+### Executive summary KPIs
 A set of three KPI visuals were created to show Quarterly Revenue, Quarterly Profit, Quarterly Orders and the associated quarterly targets for each of these measures. DAX formulae were used to generate measures to create these card visuals. 
 
+### Executive summary slicer
 Finally, a date slicer was added to enable users to fitler the report page by year.
 
 ## Part 5, building the Product Detail report page (milestone 7)
+### Product detail gauge visuals
 Gauge visuals were created to show the current performance of Orders, Revenue and Profit against quarterly targets, these were created using measures constructed using DAX formulae. Maximum gauge value was set to the quarterly target for each measure, and conditional formatting was applied so the callout value would show red if the target it not met, and black if it is. 
 
+### Product detail area chart
 An area chart was created to show the performance of different product categories over time. Total Revenue was plotted against Dates[Start of Quarter] with Products[Category] as the legend.
 
+### Product detail table
 The top 10 products table was copied from the Executive summary page and formatted. 
 
+### Product detail scatter graph
 A scatter graph was created to show the quantity of sales for each product category against profit per item. A calculated column was used to plot Profit per Item. Products[Total Quantity] was plotted against Products[Profit per Item] with Products[Description] as values and Products[Category] as the legend. 
 
+### Product detail slicer
 A slicer filter toolbar was created to allow users to control how the data on the page are filtered. Two new vertical list slicers were created to enable the user to filter by Product Category from Products[Category] and Country from Stores[Country]. A slicer toolbar was created with these slicers and a back button, linked to a bookmark with the toolbar hidden to allow users to click back to the main report page. A filter button was created on the main report page, linked to a bookmark with the toolbar open to allows users to navigate to the slicer toolbar from the main report page. 
 
 Measures were created to show the selected value for each slicer. These measures were used to create card visuals to display the categories selected to the user. 
