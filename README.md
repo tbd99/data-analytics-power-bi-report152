@@ -37,7 +37,14 @@ The aim of this project is to create a Power BI report for a a medium-sized inte
        - [Stores map drillthrough](#stores-map-drillthrough)
        - [Stores map tooltip](#stores-map-tooltip)
     - [Part 7, cross-filtering and navigation (milestone 9)](#part-7-cross-filtering-and-navigation-milestone-9)
+       - [Editing interactions](#editing-interactions)
+       - [Completing the navigation bar](#completing-the-navigation-bar)
     - [Part 8, Creating metrics in SQL (milestone 10)](#part-8-creating-metrics-in-sql-milestone-10)
+       - [How many staff are there in all of the UK stores?](#1-how-many-staff-are-there-in-all-of-the-uk-stores)
+       - [Which month in 2022 has had the highest revenue?](#2-which-month-in-2022-has-had-the-highest-revenue)
+       - [Which German store type had the highest revenue for 2022?](#3-which-german-store-type-had-the-highest-revenue-for-2022)
+       - [Create a view where the rows are store types and columns are total sales and count of orders](#4-create-a-view-where-the-rows-are-the-store-types-and-the-columns-are-the-total-sales-percentage-of-total-sales-and-the-count-of-orders)
+       - [Which product category generated the most profit for the "Wiltshire, UK" region in 2021?](#5-which-product-category-generated-the-most-profit-for-the-wiltshire-uk-region-in-2021)
 2. [Installation instructions](#installation-instructions)
 3. [Usage instructions](#usage-instructions)
 4. [File structure](#file-structure)
@@ -144,12 +151,14 @@ A tooltip page was created to enable users to quickly see each stores Profit YTD
 
 ## Part 7, cross-filtering and navigation (milestone 9)
 
+### Editing interactions
 In the executive summary report page, interactions were edited to the Product Category bar chart would not filter card visuals or KPIs. The Top 10 Products table was set so that it wold not affect any other visuals.
 
 In the customer detail report page, the Top 20 Customers table was set to not filter any other visuals. The Total customers by Product bar chart was set to not filter the Customers line graph. The Total Customers by Country donut chart was set to have cross-filtering with the Total Customers by Product bar chart. 
 
 In the product detail page, the Orders vs. Profitability graph was set to have no interactions with other visuals.
 
+### Completing the navigation bar 
 The navigation bar was completed to enable users to navigate between report pages by clicking on the corresponding icon. 4 buttons were created with custom images to represent each of the 4 report pages. Each button was formatted by formatting the Button Style so that the button would appear a different colour when a user hovers over the button. The Action format option was edited for each button to define each button type as Page Navigation and then link each button to the appropriate page. The buttons were copied across all report pages to enable navigation from any page to another. 
 
 ## Part 8, Creating metrics in SQL (milestone 10)
@@ -160,15 +169,15 @@ A list of table names was printed and saved to a .csv file. Lists of column name
 
 SQL queries were constructed to answer the following questions:
 
-1. How many staff are there in all of the UK stores?
+### 1. How many staff are there in all of the UK stores?
 
-2. Which month in 2022 has had the highest revenue?
+### 2. Which month in 2022 has had the highest revenue?
 
-3. Which German store type had the highest revenue for 2022?
+### 3. Which German store type had the highest revenue for 2022?
 
-4. Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders
+### 4. Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders
 
-5. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
+### 5. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
 
 Details of the SQL queries used to answer these questions can be found in the SQL_metrics subfolder.
 ## Installation instructions
