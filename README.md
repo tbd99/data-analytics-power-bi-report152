@@ -33,6 +33,9 @@ The aim of this project is to create a Power BI report for a a medium-sized inte
        - [Product detail scatter graph](#product-detail-scatter-graph)
        - [Product detail slicer](#product-detail-slicer)
     - [Part 6, building the Stores Map page (milestone 8)](#part-6-building-the-stores-map-page-milestone-8)
+       - [Stores map visual](#stores-map-visual)
+       - [Stores map drillthrough](#stores-map-drillthrough)
+       - [Stores map tooltip](#stores-map-tooltip)
     - [Part 7, cross-filtering and navigation (milestone 9)](#part-7-cross-filtering-and-navigation-milestone-9)
     - [Part 8, Creating metrics in SQL (milestone 10)](#part-8-creating-metrics-in-sql-milestone-10)
 2. [Installation instructions](#installation-instructions)
@@ -130,10 +133,13 @@ A slicer filter toolbar was created to allow users to control how the data on th
 Measures were created to show the selected value for each slicer. These measures were used to create card visuals to display the categories selected to the user. 
 
 ## Part 6, building the Stores Map page (milestone 8)
+### Stores map visual
 A map visual was created using the previously created geographical hierarchy with the Profit YTD measure as values. A tile style slicer was added with Stores[Country] as the field to allow users to filter by country or show all countries. 
 
+### Stores map drillthrough
 A drillthrough page was created to allow users to quickly see an overview of a store's performance. A table was created to show the top 5 products based on total revenue, with columns: Description, Profit YTD, Total Orders, Total Revenue. A column chart showing the Total Orders by product category for the store was created. Gauges were created for Profit YTD against a profit target of 20% year-on-year growth vs. the same period in the previous year. An equivalent gauge was created for Revenue YTD. Measures were calculcated to derive profit and revenue targets. A card visual was created to show the currently selected store. 
 
+### Stores map tooltip 
 A tooltip page was created to enable users to quickly see each stores Profit YTD performance against the profit target by hovering over a store on the map. The profit gauge visual created in the previous step was copied to the tooltip page. 
 
 ## Part 7, cross-filtering and navigation (milestone 9)
