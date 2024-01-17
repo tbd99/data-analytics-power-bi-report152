@@ -66,18 +66,48 @@ The Customers table was loaded with the Folder data connector, the three files w
 
 ## Part 2, creating a data model (milestone 3)
 ### Date table
-A continous date table was created to cover the time period of the data. Additional columns were added with DAX formulas including: day of week, month number, month name, quarter etc.
+A continous date table was created to cover the time period of the data. Additional columns were added with DAX formulae including: day of week, month number, month name, quarter etc.
+
+~~~
+Day = FORMAT ('Dates'[Date],"dddd")
+Month Name = FORMAT('Dates'[Date], "mmmm")
+Month Number = MONTH('Dates'[Date])
+Quarter = QUARTER(Dates[Date])
+StartOMonth = STARTOFMONTH(Dates[Date])
+Start0fQuarter = STARTOFQUARTER(Dates[Date])
+StartOfWeek = Dates[Date] - WEEKDAY(Dates[Date],2) + 1
+StartOfYear = STARTOFYEAR(Dates[Date])
+Year = YEAR('Dates'[Date])
+~~~
 
 ### Star schema
 A star schema was created by creating relationships from the Orders table to the other tables in the model. All relationships from the Orders table outwards to the other tables are many-to-one, with a single filter direction from the Order table (many) to the other tables (one).
 
+![Alt text](images_and_visualisations/milestone_3_data_model_images/Data_model_milestone3.png)
+
 ### Measures table
-A separate measures table was created for ease of navigation and good data management. Useful measures were added including: Total Orders, Total Revenue, Total Profit, Total Customers, Total Quantity, and Profit and Revenue YTD (Year To Date).
+A separate measures table was created for ease of navigation and good data management. Useful measures were added using DAX formulae including: Total Orders, Total Revenue, Total Profit, Total Customers, Total Quantity, and Profit and Revenue YTD (Year To Date).
+
+~~~
+Total Customers = DISTINCTCOUNT('Orders'[User ID])
+Total Orders = COUNT(Orders[Order Date])
+Total Profit = SUMX(Orders, 'Orders'[Product Quantity] * (RELATED('Products'[Sale Price]) - RELATED('Products'[Cost Price])))
+Total Quantity = SUM('Orders'[Product Quantity])
+Total Revenue = SUMX(Orders, 'Orders'[Product Quantity] * RELATED('Products'[Sale Price]))
+Profit YTD = CALCULATE(SUMX(Orders, 'Orders'[Product Quantity] * (RELATED('Products'[Sale Price]) - RELATED('Products'[Cost Price]))), DATESYTD(‘Dates'[Date]))
+Revenue YTD = CALCULATE((SUMX(Orders, 'Orders'[Product Quantity] * RELATED('Products'[Sale Price]))), DATESYTD(‘Dates'[Date]))
+~~~
+
 
 ### Hierarchies
 A date hierarchy was created in the Dates table to enable drilling down and granular analysis.
 
-A geography hierarchy was created in the Stores table to enable filtering by region, country, and province/state. Geographical data was assigned the correct data category (Continent/Country/State or Province) to facilitate analysis. 
+A geography hierarchy was created in the Stores table to enable filtering by region, country, and province/state. Geographical data was assigned the correct data category (Continent/Country/State or Province) to facilitate analysis. To create the hierarchy, a new calculated column was created using DAX in the Stores table called Country containing the full country name for each row, based on the Stores[Country Code] column. A full geography column was also created using DAX to make mapping more accurate. A new calculated column was created in the Stores table called Geography containing the full geography name for each row, based on the Stores[Country Region], and Stores[Country] columns. 
+
+~~~
+Country = SWITCH([Country Code], "GB", "United Kingdom", "US", "United States", "DE", "Germany")
+Geography = CONCATENATE('Stores'[Country Region],CONCATENATE(", ", 'Stores'[Country]))
+~~~
 
 ## Part 3, building the Customer Detail report page (milestone 5)
 ### Customers headline card visuals
