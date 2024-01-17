@@ -52,13 +52,17 @@ The aim of this project is to create a Power BI report for a a medium-sized inte
 # Detailed project description
 
 ## Part 1, loading and transforming data in Power BI (milestone 2)
-The Orders table was loaded from an Azure SQL database and data was transformed to filter null/missing values and columns were edited in Power Query Editor. Order Date and Shipping Date columns were each split into a date column and a time column. Sensitive data was removed to ensure data privacy.
+The Orders table was loaded from an Azure SQL database and data was transformed to filter null/missing values. Columns were edited in Power Query Editor. Order Date and Shipping Date columns were each split into a date column and a time column. Sensitive data was removed to ensure data privacy.
 
-The Products table was loaded from a .csv file. Calculated columns were created from the weight column and DAX expressions utilised to give a column containing all weight values with consistent units.
+The Products table was loaded from a .csv file. The Remove Duplicates function was used on the product_code column to ensure each product code is unique. Data in the weight column was transformed using Power Query Editor. The Column From Examples feature was used to generate two new columns from the weight column, one for the weight values and another for the units. For the newly created units column, blank entries were replaced with kg. For the values column, data type was converted to a decimal number. A calculated column was created from the weight column using DAX expressions to create a column containing all weight values with consistent units (kg). If the unit was not kg, the corresponding value in the values column is divided by 1000 to convert to kg. 
+
+~~~
+Weight Kg = IF(('Products'[Weight unit] = "kg"), 'Products'[Weight value], ('Products'[Weight value]/1000))
+~~~
 
 The Stores table was loaded from Azure Blob Storage and columns were renamed to align with Power BI naming conventions.
 
-The Customers table was loaded with the Folder data connector, the three files were combined and transformed in a single query and loaded into a single table. A Full Name column was created by combining First Name and Last Name columns.
+The Customers table was loaded with the Folder data connector, the three files were combined and transformed in a single query and loaded into a single table. A Full Name column was created by combining First Name and Last Name columns and unused columns such as index columns were deleted. 
 
 ## Part 2, creating a data model (milestone 3)
 ### Date table
