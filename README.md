@@ -442,11 +442,11 @@ The images_and_visualisations folder contains images of working and visualisatio
 - Milestone 6 is the construction of the executive summary report page.
 - Milestone 7 is the construction of the product detail report page.
 - Milestone 8 is the construction of the stores map page.
-- Milestone 9 is the finalisation of the entire Power BI report, including cross-filtering and navigation between report pages.\
+- Milestone 9 is the finalisation of the entire Power BI report, including cross-filtering and navigation between report pages.
 
 In each of these subfolders various labelled screenshots are incldued to show:
 -  Final report pages and filtered pages
 -  DAX formulae used to calculcate measures or calculated columns to create visuals
 -  Filters applied to various visuals to achieve the desired results 
 
-SQL files and results (Milestone 10) are saved in the SQL_metrics subfolder.
+SQL files and query results in the .csv format (Milestone 10), along with screenshots of the query results, are saved in the SQL_metrics subfolder.
